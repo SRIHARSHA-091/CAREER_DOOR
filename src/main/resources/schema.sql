@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(191) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+    full_name VARCHAR(255),
+    phone_number VARCHAR(255),
+    profile_picture_path VARCHAR(500),
+    company_name VARCHAR(255),
+    company_logo_path VARCHAR(500),
+    company_description TEXT,
+    company_website VARCHAR(500),
+    is_verified BOOLEAN NOT NULL DEFAULT FALSE,
+    resume_path VARCHAR(500),
+    headline VARCHAR(255),
+    summary TEXT,
+    location VARCHAR(255),
+    created_at DATETIME,
+    updated_at DATETIME,
+    PRIMARY KEY (id),
+    UNIQUE KEY uk_users_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
